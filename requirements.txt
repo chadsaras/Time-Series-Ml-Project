@@ -1,0 +1,25 @@
+# Python 3.8 is required: fastai 0.7.x and statsmodels <0.13 do not build on 3.9+.
+#   conda create -n tsml python=3.8 && conda activate tsml
+#   pip install -r requirements.txt
+
+# --- core ---
+numpy>=1.19,<1.24
+pandas>=1.1,<2.0
+scipy>=1.5,<1.11
+
+# --- data sources ---
+yfinance>=0.2.0
+
+# --- models ---
+scikit-learn>=0.24,<1.3          # RandomForestRegressor, MinMaxScaler, metrics
+tensorflow>=2.4,<2.13            # provides keras 2.x used by both notebooks
+statsmodels>=0.12,<0.13          # ARMA was removed in statsmodels 0.13+
+
+# --- feature engineering ---
+fastai==0.7.0                    # add_datepart (calendar feature expansion)
+pandas-summary>=0.0.7            # DataFrameSummary (EDA only)
+
+# --- plotting / notebook ---
+matplotlib>=3.3
+seaborn>=0.11
+jupyterlab>=3.0
